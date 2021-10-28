@@ -94,8 +94,8 @@ class MainActivity : AppCompatActivity() {
          when (lemonadeState){
             SELECT -> { lemonadeState = SQUEEZE
                         lemonSize = lemonTree.pick()
-                        squeezeCount = 0}
-            SQUEEZE -> if (lemonSize != 0) {  squeezeCount++
+                        squeezeCount }
+            SQUEEZE -> if (lemonSize >= 0) {  squeezeCount++
                             lemonSize--} else lemonadeState = DRINK
             DRINK  -> {lemonadeState = RESTART
                       lemonSize = -1 }
